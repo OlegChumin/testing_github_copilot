@@ -7,4 +7,9 @@ public class WhiteBoardService {
     public static boolean isPalindrome(String str) {
         return str.equals(StringUtils.reverse(str));
     }
+
+    // method remove any given substring from a string
+    public static String removeSubstring(String str, String subStr) {
+        return str.replaceAll(subStr, "");
+    }
 }
