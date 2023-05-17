@@ -1,10 +1,12 @@
 package dev.chumin.testing_github_copilot.service;
 
 import dev.chumin.testing_github_copilot.model.Employee;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class EmployeeService {
     List<Employee> employees = new ArrayList<>();
 
