@@ -31,4 +31,29 @@ public class StringUtils {
         }
         return sb.toString().trim();
     }
+
+    public static String upcase(String str) {
+        return str.toUpperCase();
+    }
+
+    public static String removeSpaces(String str) {
+        return str.replaceAll(" ", "");
+    }
+
+    public static String removeFirstChar(String str) {
+        return str.substring(1);
+    }
+
+    public static String removeLastChar(String str) {
+        return str.substring(0, str.length() - 1);
+    }
+
+    public static char[] toCharArray(String str) {
+        char[] chars = new char[str.length()];
+        for (int i = 0; i < str.length(); i++) {
+            chars[i] = str.charAt(i);
+        }
+        return chars;
+    }
+
 }
