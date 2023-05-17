@@ -2,7 +2,7 @@ package dev.chumin.testing_github_copilot.utils;
 
 public class StringUtils {
     public static String reverse(String str) {
-        StringBuilder sb = new StringBuilder(str);
+        StringBuilder sb = new StringBuilder(str); // O(n)
         return sb.reverse().toString();
     }
 
@@ -11,22 +11,22 @@ public class StringUtils {
             return "Not anagrams";
         }
         int[] letters = new int[26];
-        for (int i = 0; i < str1.length(); i++) {
-            letters[str1.charAt(i) - 'a']++;
-            letters[str2.charAt(i) - 'a']--;
+        for (int i = 0; i < str1.length(); i++) { // Перебор символов строки str1
+            letters[str1.charAt(i) - 'a']++; // Увеличение счетчика для данной буквы в str1
+            letters[str2.charAt(i) - 'a']--; // Уменьшение счетчика для данной буквы в str2
         }
-        for (int letter : letters) {
+        for (int letter : letters) { // Проверка счетчиков букв в массиве letters
             if (letter != 0) {
-                return "Not anagrams";
+                return "Not anagrams"; // Если счетчик не равен 0, строки не являются анаграммами
             }
         }
-        return "Anagrams";
+        return "Anagrams"; // Если все счетчики равны 0, строки являются анаграммами
     }
 
     public static String reverseWords(String str) {
         String[] words = str.split(" ");
         StringBuilder sb = new StringBuilder();
-        for (String word : words) {
+        for (String word : words) { // O(n)
             sb.append(reverse(word)).append(" ");
         }
         return sb.toString().trim();
