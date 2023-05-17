@@ -14,4 +14,13 @@ public class CalendarUtils {
     int calculateDaysBetweenDatesByPeriod(LocalDate startDate, LocalDate endDate) {
         return java.time.Period.between(startDate, endDate).getDays();
     }
+
+    int calculateDaysBetweenDatesByDuration(LocalDate startDate, LocalDate endDate) {
+        return (int) java.time.Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
+    }
+
+    int getDaysFromDate(LocalDate date) {
+        return date.getDayOfMonth();
+    }
+
 }
